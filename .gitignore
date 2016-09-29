@@ -1,0 +1,9 @@
+/build
+.idea
+.gradle
+
+*.iml
+*.log
+/src/*/generated
+/classes
+/logs
