@@ -1,0 +1,16 @@
+influxdb:
+  -
+    period: 10
+    timeunit: 'SECONDS'
+    protocol: 'http'
+    auth: 'service:service'
+    dbName: 'service'
+    connectionTimeout: 500
+    readTimeout: 500
+    tags:
+     host: '${host.name}'
+     env: 'dev'
+    prefix: ''
+    hosts:
+      - host: 'influxdb.local'
+        port: 8086
