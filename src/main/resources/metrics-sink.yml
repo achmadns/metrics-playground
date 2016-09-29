@@ -1,12 +1,12 @@
 influxdb:
   -
-    period: 10
+    period: 5
     timeunit: 'SECONDS'
     protocol: 'http'
     auth: 'service:service'
     dbName: 'service'
-    connectionTimeout: 500
-    readTimeout: 500
+    connectionTimeout: 3000
+    readTimeout: 3000
     tags:
      host: '${host.name}'
      env: 'dev'

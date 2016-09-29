@@ -25,8 +25,9 @@ public class MetricsTest {
         metrics.register("jvm.gc", new GarbageCollectorMetricSet());
         metrics.register("jvm.memory", new MemoryUsageGaugeSet());
         metrics.register("jvm.fd.usage", new FileDescriptorRatioGauge());
-        ReporterConfig.loadFromFile("src/main/resources/metrics-sink.yml").enableAll(metrics);
-        Stream.range(0, 60).forEach(n -> {
+        ReporterConfig.loadFromFile(getClass().getClassLoader().getResource("metrics-sink.yml").getFile()).enableAll(metrics);
+
+        Stream.range(0, 3600).forEach(n -> {
             final Timer.Context timer = metrics.timer("test").time();
             try {
                 Thread.sleep(1000);
@@ -39,5 +40,8 @@ public class MetricsTest {
             }
         });
 
+
     }
+
+
 }
