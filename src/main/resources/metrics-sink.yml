@@ -14,3 +14,14 @@ influxdb:
     hosts:
       - host: 'influxdb.local'
         port: 8086
+
+console:
+  -
+    outfile: '.idea/metrics.out'
+    period: 5
+    timeunit: 'SECONDS'
+    predicate:
+      color: "white"
+      useQualifiedName: true
+      patterns:
+        - ".+"
